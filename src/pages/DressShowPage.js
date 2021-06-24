@@ -11,7 +11,6 @@ function DressShowPage() {
     const [carouselItemsArr, setCarouselItemsArr] = useState([]);
     
     useEffect(() => {
-        console.log('dressid ====> ', dressid)
         const fetchDress = async () => {
             const response = await DressesModel.getDress(dressid);
             console.log('fetched dress response ====> ', response);

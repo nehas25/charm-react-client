@@ -1,25 +1,22 @@
 const url = 'http://localhost:4000/api/v1/users/60cfdee8edaa32322e9d68a2'; 
-const cartUrl = url + '/add';
+const addToCartUrl = url + '/add';
+const removeFromCartUrl = url + '/remove';
 
 class UsersModel {
     static addToCart(productid) {
-        return fetch(`${cartUrl}/${productid}`, {method: 'PUT'})
+        return fetch(`${addToCartUrl}/${productid}`, {method: 'PUT'})
             .then((res) => res.json())
     }
 
-    static getUser(url) {
+    static getUser() {
       return fetch(url)
-        .then((res) => {
-          console.log(res.json())
-          return res.json()
-        }
-          )
+        .then((res) => res.json())
     }
 
-    // static removeFromCart(dressid) {
-    //     return fetch(`${url}/${dressid}`)
-    //         .then((res) => res.json())
-    // }
+    static removeFromCart(productid) {
+        return fetch(`${removeFromCartUrl}/${productid}`, {method: 'PUT'})
+            .then((res) => res.json())
+    }
 }
 
 export default UsersModel;
