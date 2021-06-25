@@ -5,11 +5,6 @@ class DressesModel {
         return fetch(url)
             .then((res) => res.json())
     }
-
-    static getDress(dressid) {
-        return fetch(`${url}/${dressid}`)
-            .then((res) => res.json())
-    }
 }
 
 export default DressesModel;

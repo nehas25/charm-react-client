@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import UsersModel from '../models/UsersModel';
+import ProductsModel from '../models/ProductsModel';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Trash } from 'react-bootstrap-icons';
 
-function BagShowPage() {
+function BagShowPage(props) {
     const [bagItems, setBagItems] = useState(null);
     const [bagItemsDetails, setBagItemsDetails] = useState([]);
     
@@ -12,34 +13,26 @@ function BagShowPage() {
     }, []);
 
     const fetchBag = async () => {
-      const response = await UsersModel.getUser();
-      console.log('fetched bag response ====> ', response);
-      setBagItems(response.cartItems);
+      let localBagItems;
+      let prodDetails;
+      if(props.userid) {
+        // fetchedBag = await UsersModel.getUser();
+        // console.log('fetched bag fetchedBag ====> ', fetchedBag);
+        // setBagItems(fetchedBag.cartItems);
+      } else {
+        localBagItems = JSON.parse(localStorage.getItem('bagItems'));
+        if(localBagItems) {
+          setBagItems(localBagItems);
+          console.log('bagItems ==> ', bagItems);
+          console.log('localBagItems ==> ', localBagItems);
+          const prodids = localBagItems.map((item) => item.productId);
 
-      const cardsArr = response.cartItems.map((item) => {
-        return(
-          <Col key={item._id}>
-            <Card className="bag-item">
-              <Card.Img className="bag-item-img" variant="top" src={item.imgUrls[0]} />
-              <Card.Body className="bag-item-body">
-                <Card.Title>{item.name}</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up the bulk of
-                  the card's content.
-                </Card.Text>
-                <Card.Text>
-                  {item.price} USD
-                </Card.Text>
-                {/* <Button variant="primary">Go somewhere</Button> */}
-                <Button onClick={() => handleRemoveFromCart(item._id)}>
-                  <Trash size={30}></Trash>
-                </Button>
-              </Card.Body>
-            </Card>
-          </Col>
-        )
-      });
-      setBagItemsDetails(cardsArr);
+          prodDetails = await ProductsModel.getProductDetails(prodids);
+          console.log(typeof(prodDetails));
+          console.log(prodDetails);
+          setBagItemsDetails(prodDetails);
+        }
+      }
   } ;
 
   const handleRemoveFromCart = async (itemid) => {
@@ -47,14 +40,43 @@ function BagShowPage() {
     await UsersModel.removeFromCart(itemid);
     fetchBag();
   }
-    
+
+  const cardsArr = bagItemsDetails.map((item) => {
+    return(
+      <Col key={item._id}>
+        <Card className="bag-item">
+          <Card.Img className="bag-item-img" variant="top" src={item.imgUrls[0]} />
+          <Card.Body className="bag-item-body">
+            <Card.Title>{item.name}</Card.Title>
+            <Card.Text>
+              {item.description}
+            </Card.Text>
+            <Card.Text>
+              {item.price} USD
+            </Card.Text>
+            <Card.Text>
+              {} USD
+            </Card.Text>
+            <Card.Text>
+              {item.price} USD
+            </Card.Text>
+            {/* <Button variant="primary">Go somewhere</Button> */}
+            <Button onClick={() => handleRemoveFromCart(item._id)}>
+              <Trash size={30}></Trash>
+            </Button>
+          </Card.Body>
+        </Card>
+      </Col>
+    )
+  });
+
     if(!bagItems) {
-        return <div>Sorry, can't display item at this time.</div>
+        return <div>Bag is empty.</div>
     } else {
         return(
           <Container fluid="sm">
               <Row xs={1} sm={1} md={1} lg={1} xl={1} xxl={1}>
-                {bagItemsDetails}
+                {cardsArr}
               </Row>
           </Container>
           

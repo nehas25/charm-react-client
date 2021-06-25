@@ -31,7 +31,7 @@ function NavBar(props) {
                 <li>
                   <Button href="/cart" variant="light">
                     <Bag color="royalblue" size={30}></Bag>
-                    <Badge bg="secondary">New</Badge>
+                    <Badge bg="secondary">{props.bagItemsCount}</Badge>
                   </Button>
                 </li>
             </ul>

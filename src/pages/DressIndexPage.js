@@ -6,14 +6,14 @@ function DressIndexPage() {
     const [allDresses, setAllDresses] = useState(null);
 
     useEffect(() => {
-        const fetchDresses = async () => {
-            const response = await DressesModel.all();
-            setAllDresses(response);
-            console.log('fetched all dresses response ====> ', response);
-        } ;
-        console.log('Value of allDress===>', allDresses)
-        if(allDresses === null) fetchDresses();
-    });
+      fetchDresses();
+    }, []);
+
+    const fetchDresses = async () => {
+      const fetchedDresses = await DressesModel.all();
+      setAllDresses(fetchedDresses);
+      console.log('fetched all dresses response ====> ', fetchedDresses);
+    } ;
 
 
     if(allDresses) {
