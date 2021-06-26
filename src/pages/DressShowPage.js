@@ -29,7 +29,8 @@ function DressShowPage(props) {
       const item = {
         productId: dressid,
         size: selectedSize,
-        quantity: selectedQuantity
+        quantity: selectedQuantity,
+        productDetails: dress
       }
       let items = [];
       let localBagItems = localStorage.getItem('bagItems');

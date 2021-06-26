@@ -6,15 +6,15 @@ import { Trash } from 'react-bootstrap-icons';
 
 function BagShowPage(props) {
     const [bagItems, setBagItems] = useState(null);
-    const [bagItemsDetails, setBagItemsDetails] = useState([]);
+    // const [bagItemsDetails, setBagItemsDetails] = useState([]);
     
     useEffect(() => {
       fetchBag();
-    }, []);
+      console.log('Value of bagItems ===> ', bagItems)
+    }, [ ]);
 
     const fetchBag = async () => {
       let localBagItems;
-      let prodDetails;
       if(props.userid) {
         // fetchedBag = await UsersModel.getUser();
         // console.log('fetched bag fetchedBag ====> ', fetchedBag);
@@ -25,53 +25,54 @@ function BagShowPage(props) {
           setBagItems(localBagItems);
           console.log('bagItems ==> ', bagItems);
           console.log('localBagItems ==> ', localBagItems);
-          const prodids = localBagItems.map((item) => item.productId);
-
-          prodDetails = await ProductsModel.getProductDetails(prodids);
-          console.log(typeof(prodDetails));
-          console.log(prodDetails);
-          setBagItemsDetails(prodDetails);
         }
       }
   } ;
 
-  const handleRemoveFromCart = async (itemid) => {
-    console.log('itemid ===> ',itemid);
-    await UsersModel.removeFromCart(itemid);
+  const handleRemoveFromCart = (index) => {
+    console.log('index ===> ',index);
+    let localBagItems = JSON.parse(localStorage.getItem('bagItems'));
+    localBagItems.splice(index, 1);
+    localStorage.setItem('bagItems', JSON.stringify(localBagItems));
     fetchBag();
+    props.updateItemsCount(localBagItems.length);
   }
 
-  const cardsArr = bagItemsDetails.map((item) => {
-    return(
-      <Col key={item._id}>
-        <Card className="bag-item">
-          <Card.Img className="bag-item-img" variant="top" src={item.imgUrls[0]} />
-          <Card.Body className="bag-item-body">
-            <Card.Title>{item.name}</Card.Title>
-            <Card.Text>
-              {item.description}
-            </Card.Text>
-            <Card.Text>
-              {item.price} USD
-            </Card.Text>
-            <Card.Text>
-              {} USD
-            </Card.Text>
-            <Card.Text>
-              {item.price} USD
-            </Card.Text>
-            {/* <Button variant="primary">Go somewhere</Button> */}
-            <Button onClick={() => handleRemoveFromCart(item._id)}>
-              <Trash size={30}></Trash>
-            </Button>
-          </Card.Body>
-        </Card>
-      </Col>
-    )
-  });
+  let cardsArr;
+  if(bagItems) {
+    cardsArr = bagItems.map((item, index) => {
+      console.log(bagItems);
+      return(
+        <Col key={item._id}>
+          <Card className="bag-item">
+            <Card.Img className="bag-item-img" variant="top" src={item.productDetails.imgUrls[0]} />
+            <Card.Body className="bag-item-body">
+              <Card.Title>{item.productDetails.name}</Card.Title>
+              <Card.Text>
+                {item.productDetails.description}
+              </Card.Text>
+              <Card.Text>
+                {item.productDetails.price} USD
+              </Card.Text>
+              <Card.Text>
+                Size: {item.size}
+              </Card.Text>
+              <Card.Text>
+                Quantity: {item.quantity}
+              </Card.Text>
+              {/* <Button variant="primary">Go somewhere</Button> */}
+              <Button onClick={() => handleRemoveFromCart(index)}>
+                <Trash size={30}></Trash>
+              </Button>
+            </Card.Body>
+          </Card>
+        </Col>
+      )
+    });    
+  }
 
-    if(!bagItems) {
-        return <div>Bag is empty.</div>
+    if(!bagItems || !bagItems.length) {
+        return <p>Bag is empty.</p>
     } else {
         return(
           <Container fluid="sm">

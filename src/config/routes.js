@@ -11,7 +11,7 @@ function Routes(properties) {
       <Route exact path='/' component={HomePage} />
       <Route exact path='/dresses' component={DressIndexPage} />
       <Route path='/dresses/:dressid' render={(props) => <DressShowPage {...props} updateItemsCount={properties.updateItemsCount} />} />
-      <Route path='/cart/' component={BagShowPage} />
+      <Route path='/cart/' render={(props) => <BagShowPage{...props} updateItemsCount={properties.updateItemsCount} />} />
     </Switch>
   );
 }
