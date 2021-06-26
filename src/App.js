@@ -5,7 +5,7 @@ import Routes from './config/routes';
 import NavBar from './components/NavBar';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-
+import {Nav} from 'react-bootstrap';
 
 
 function App() {
@@ -23,7 +23,8 @@ function App() {
 
   return (
     <div>
-      <NavLink exact to="/"><h1>Charm</h1></NavLink>
+    <Nav.Link href="/"><h1>Charm</h1></Nav.Link>
+      {/* <NavLink exact to="/"><h1>Charm</h1></NavLink> */}
       {/* <NavBar bagItemsCount={bagItemsCount} /> */}
       <NavBar bagItemsCount={bagItemsCount} />
       <Routes updateItemsCount={updateItemsCount}/>

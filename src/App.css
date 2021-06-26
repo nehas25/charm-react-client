@@ -35,3 +35,36 @@ li {
   display: flex;
   flex-direction: column;
 }
+
+.jumbotron {
+  background-color: #FFF;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.btn-custom {
+  color: #333;
+  background-color: #CBB682;
+  width: 80px;
+  margin: 0 2%;
+}
+
+.nav-link {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 15px;
+  
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color : #CBB682;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  color : #CBB682;
+  text-align: center;
+}
