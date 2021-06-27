@@ -65,10 +65,10 @@ function DressShowPage(props) {
       return (
         <Carousel.Item key={dress.url}>
           <img
-              className="d-block"
+              // className="d-block"
               src={url}
               alt="Dress slide"
-              style={{ maxHeight: 900 }}
+              // style={{ maxHeight: 900, width: 400 }}
           />
         </Carousel.Item>
       )
@@ -85,26 +85,27 @@ function DressShowPage(props) {
       return <div>Sorry, can't display item at this time.</div>
   } else {
       return(
-          <Container fluid="sm">
+          <Container fluid="md" className="prod-details-container">
             <Row>
               <Carousel fade>
                 {imgArr}
               </Carousel>
-            </Row>
-            <div>
+              <div className="prod-details-show">
                 <p>{dress.name}</p>
                 <p>{dress.description}</p>
                 <p>{dress.price}</p>
                 <ToggleButtonGroup onChange={handleSetSize} size="lg" className="mb-2" type="radio" name="options">
                   {sizeButtons}
                 </ToggleButtonGroup>
-                <div>
-                  <Button variant="custom" onClick={decrementselectedQuantity}>-</Button>
+                <div className="select-qty-control">
+                  <Button variant="custom" onClick={decrementselectedQuantity} className="minus-btn">-</Button>
                   <span>  {selectedQuantity}  </span>
                   <Button variant="custom" onClick={incrementselectedQuantity}>+</Button>
                 </div>
-                <Button variant="custom" onClick={handleAddToCart} disabled={!(selectedSize && selectedQuantity)}><Bag></Bag>Add To Cart</Button>
+                <Button variant="custom" className="add-to-bag-btn" onClick={handleAddToCart} disabled={!(selectedSize && selectedQuantity)}><Bag className="bag-icon-in-btn"></Bag>Add To Bag</Button>
             </div>
+            </Row>
+            
           </Container>
       )
   }

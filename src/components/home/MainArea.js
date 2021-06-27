@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "react-bootstrap/Image";
-import { Jumbotron, Container, Row, Col, Card } from "react-bootstrap";
+import { Jumbotron, Container, Row, Col, Card, Button } from "react-bootstrap";
 import MainDressImg from "../../images/Red-rose-dress.jpeg";
 import MainJewelryImg from "../../images/ring.jpeg";
 
@@ -19,13 +19,20 @@ function MainArea(props) {
     // </Row>
 
     <Row class="jumbotron-row">
-      <Card>
-          <Card.Img variant="top" src={MainDressImg} fluid="true" />
+      <Card className="w-100">
+        <div className="dress-image-overlay">
+          <p>From casual to stunning evening styles, browse designer dresses for every occasion. </p>
+          <Button variant="custom" className="btn-on-top" href="/dresses">Shop Dresses</Button>
+        </div>
+        <Card.Img variant="top" src={MainDressImg} fluid="true" />
       </Card>
-      <Card>
+      <Card className="w-100">
+          <div className="jewelry-image-overlay">
+            <p>From casual to stunning evening styles, browse designer dresses for every occasion. </p>
+            <Button variant="custom" className="btn-on-top jewelry" disabled>Shop Jewelry</Button>
+          </div>
           <Card.Img variant="top" src={MainJewelryImg} fluid="true" />
       </Card>
-
     </Row>
   );
 }

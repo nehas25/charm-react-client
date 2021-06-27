@@ -43,9 +43,46 @@ function BagShowPage(props) {
     cardsArr = bagItems.map((item, index) => {
       console.log(bagItems);
       return(
-        <Col key={item._id}>
-          <Card className="bag-item">
-            <Card.Img className="bag-item-img" variant="top" src={item.productDetails.imgUrls[0]} />
+        // <Col key={item._id} className="bag-item-card-container">
+        //   <Card className="bag-item">
+        //     <Card.Img className="bag-item-img" variant="top" src={item.productDetails.imgUrls[0]} />
+        //     <Card.Body className="bag-item-body">
+        //       <Card.Title>{item.productDetails.name}</Card.Title>
+        //       <Card.Text>
+        //         {item.productDetails.description}
+        //       </Card.Text>
+        //       <Card.Text>
+        //         {item.productDetails.price} USD
+        //       </Card.Text>
+        //       <Card.Text>
+        //         Size: {item.size}
+        //       </Card.Text>
+        //       <Card.Text>
+        //         Quantity: {item.quantity}
+        //       </Card.Text>
+        //       {/* <Button variant="primary">Go somewhere</Button> */}
+        //       <Button variant="custom" onClick={() => handleRemoveFromCart(index)}>
+        //         <Trash size={20}></Trash>
+        //       </Button>
+        //     </Card.Body>
+        //   </Card>
+        // </Col>
+
+        // <Col key={item._id} className="bag-item-card-container">
+          <Card className="bag-item mb-3">
+          <Row className="no-gutters">
+          <Col className="col-md-4">
+
+          
+            <Card.Img 
+              className="bag-item-img" 
+              src={item.productDetails.imgUrls[0]} 
+              fluid="true" 
+              />
+            </Col>
+            <Col className="col-md-8">
+
+            
             <Card.Body className="bag-item-body">
               <Card.Title>{item.productDetails.name}</Card.Title>
               <Card.Text>
@@ -62,24 +99,30 @@ function BagShowPage(props) {
               </Card.Text>
               {/* <Button variant="primary">Go somewhere</Button> */}
               <Button variant="custom" onClick={() => handleRemoveFromCart(index)}>
-                <Trash size={30}></Trash>
+                <Trash size={20}></Trash>
               </Button>
             </Card.Body>
+            </Col>
+            </Row>
           </Card>
-        </Col>
+        // </Col>
       )
     });    
   }
 
     if(!bagItems || !bagItems.length) {
-        return <p>Bag is empty.</p>
+        return <p id="bag-empty-message">Your bag is empty.</p>
     } else {
         return(
-          <Container fluid="sm">
-              <Row xs={1} sm={1} md={1} lg={1} xl={1} xxl={1}>
+          // <Container fluid="sm">
+          //     <Row className="no-gutters" xs={1} sm={1} md={1} lg={1} xl={1} xxl={1}>
+          //       {cardsArr}
+          //     </Row>
+          // </Container>
+
+<Container fluid="sm">
                 {cardsArr}
-              </Row>
-          </Container>
+</Container>
           
         )
     }

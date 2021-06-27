@@ -24,7 +24,7 @@ function NavBar(props) {
             {/* <li><NavLink exact to="/dresses">Dresses</NavLink></li> */}
             <Nav.Link href="/dresses" className="nav-link">Dresses</Nav.Link>
             {/* <li><NavLink exact to="#">Jewelry</NavLink></li> */}
-            <Nav.Link href="#" className="nav-link">Jewelry</Nav.Link>
+            <Nav.Link href="#" className="nav-link jewelry">Jewelry</Nav.Link>
           </Nav>
           </Navbar.Collapse>
           <Navbar.Collapse className="justify-content-end flex-grow-0">
