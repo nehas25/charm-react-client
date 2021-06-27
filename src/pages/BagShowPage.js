@@ -61,7 +61,7 @@ function BagShowPage(props) {
                 Quantity: {item.quantity}
               </Card.Text>
               {/* <Button variant="primary">Go somewhere</Button> */}
-              <Button onClick={() => handleRemoveFromCart(index)}>
+              <Button variant="custom" onClick={() => handleRemoveFromCart(index)}>
                 <Trash size={30}></Trash>
               </Button>
             </Card.Body>

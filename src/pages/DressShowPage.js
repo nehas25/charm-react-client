@@ -76,7 +76,7 @@ function DressShowPage(props) {
 
     sizeButtons = dress.size.map((size) => {
       return (
-        <ToggleButton variant="primary" value={size}>{size}</ToggleButton>
+        <ToggleButton variant="custom" value={size}>{size}</ToggleButton>
       )
     });
   }
@@ -99,11 +99,11 @@ function DressShowPage(props) {
                   {sizeButtons}
                 </ToggleButtonGroup>
                 <div>
-                  <Button variant="primary" onClick={decrementselectedQuantity}>-</Button>
+                  <Button variant="custom" onClick={decrementselectedQuantity}>-</Button>
                   <span>  {selectedQuantity}  </span>
-                  <Button variant="primary" onClick={incrementselectedQuantity}>+</Button>
+                  <Button variant="custom" onClick={incrementselectedQuantity}>+</Button>
                 </div>
-                <Button variant="primary" onClick={handleAddToCart} disabled={!(selectedSize && selectedQuantity)}><Bag></Bag>Add To Cart</Button>
+                <Button variant="custom" onClick={handleAddToCart} disabled={!(selectedSize && selectedQuantity)}><Bag></Bag>Add To Cart</Button>
             </div>
           </Container>
       )

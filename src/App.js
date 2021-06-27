@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div>
-    <Nav.Link href="/"><h1>Charm</h1></Nav.Link>
+      <Nav.Link href="/" className="title-bar"><h1>Charm</h1></Nav.Link>
       {/* <NavLink exact to="/"><h1>Charm</h1></NavLink> */}
       {/* <NavBar bagItemsCount={bagItemsCount} /> */}
       <NavBar bagItemsCount={bagItemsCount} />

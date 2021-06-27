@@ -38,6 +38,9 @@ li {
 
 .jumbotron {
   background-color: #FFF;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: black;
 }
 
 .flex-grow-1 {
@@ -62,9 +65,60 @@ li {
   color : #CBB682;
 }
 
+.navbar {
+  background-color: black;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: #CBB682;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(203, 182, 130, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #E9DBBD;
+}
+
+navbar-toggler:focus {
+  outline-color: rgb(203, 182, 130);
+}
+
 h1 {
   font-size: 5rem;
   font-weight: bold;
-  color : #CBB682;
+  /* color : #CBB682; */
+  color: black;
+  text-align: center;
+}
+
+.title-bar {
+  background-color: #E9DBBD;
+  margin: 0;
+}
+
+.modal-content {
+  padding: 8%;
+}
+
+.container-jumbo {
+  display: flex;
+}
+
+#dress-cards-container {
+  margin: 2%;
+}
+
+.dress-card-content {
+  color: black;
+  text-decoration: none;
+  margin: 2%;
+}
+
+.jumbotron-text {
+  color: #E9DBBD;
+  margin: 3%;
+  font-size: 1em;
   text-align: center;
 }

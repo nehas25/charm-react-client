@@ -7,7 +7,7 @@ function DressCard(props) {
             <Col className="mb-4">
                 <Card>
                     <Card.Img variant="top" src={`${props.dress.imgUrls[0]}`} fluid="true" />
-                    <Card.Title>{props.dress.name}</Card.Title>
+                    <Card.Title className="dress-card-content">{props.dress.name}</Card.Title>
                 </Card>
             </Col>
         </Link>
