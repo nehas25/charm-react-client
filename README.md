@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# Charm - React project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A clothing store application, developed using React. This was my capstone project for Software Engineering Immersive coding bootcamp at General Assembly. Features:
 
-## Available Scripts
+- browse dresses
+- add item to your shopping bag 
+- delete them from bag
+- login (try credentials u/p: test/test)
+- sign up
 
-In the project directory, you can run:
+## Technologies Used
 
-### `npm start`
+- MERN stack (Mongoose, Express, React, Node)
+- Bootstrap
+- CSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Also learned about and implemented some React Hooks - useState, useEffect, useParams.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Wireframes
 
-### `npm test`
+Started out with drawing out wireframes and writing user stories.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Home Page](https://github.com/nehas25/charm-react-client/blob/main/docs/GA%20Capstone%20Wireframes%20-%20Home%20page.jpg)
+- [Products Index Page](https://github.com/nehas25/charm-react-client/blob/main/docs/GA%20Capstone%20Wireframes%20-%20Products%20Index%20page.jpg)
+- [Show Shopping Bag Page](https://github.com/nehas25/charm-react-client/blob/main/docs/GA%20Capstone%20Project%20-%20Shopping%20Cart%20Wireframe.jpg)
+- [Login and Signup forms](https://github.com/nehas25/charm-react-client/blob/main/docs/GA%20Capstone%20Project%20-%20Login%2C%20Signup%20Wireframe.jpg)
 
-### `npm run build`
+## User stories
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Fashion Store - Online store for women’s fashion
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Technologies
+MERN stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Products
+- Clothes
+- Jewelry, if time permits
 
-### `npm run eject`
+#### Functionalities
+- Authentication and authorization
+- Shopping cart
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Home page should contain
+- Logo, company name, navbar, product categories
+- Featured products
+- Shop by Category section
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Category index page
+- Clicking on a category displays all products for that category
+- Shows some filters
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Product detail page
+- Shows a few photos of the product, either a carousel or ability to zoomed view or both
+- Details of product like description and price
+- Choose quantity
+- Add to Cart button
 
-## Learn More
+Shopping cart page
+- Displays cards of all items in cart
+- Allows to edit cart items - remove items or change quantity
+- Checkout button - when any non-logged in user wants to checkout, they need to login. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Login Page
+- Login form and option to Sign Up
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Add to Cart button
+- Adds item to cart and displays number of items on the cart icon
 
-### Code Splitting
+### My minimum viable product should contain
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Auth and auth - login, sign up, auth
+- Add to Cart
+- Remove from Cart
+- Select quantity
+- Carousel on product detail page
 
-### Analyzing the Bundle Size
+### My stretch goals
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Filters
+- Stripe payment processing
+- Sizes
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I hit my minimum viable product and also have sizes from stretch goals.
