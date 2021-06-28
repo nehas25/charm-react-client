@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
 import { Bag, Person } from "react-bootstrap-icons";
 import { Badge, Button, Navbar, Nav } from "react-bootstrap";
 import LoginSignupModal from "./LoginSignupModal";
@@ -47,6 +46,12 @@ function NavBar(props) {
         show={show}
         openModal={openModal}
         closeModal={closeModal}
+        token={props.token} 
+        addToken={props.addToken}
+        isLoggedIn={props.isLoggedIn}
+        handleSuccessfulLogin={props.handleSuccessfulLogin}
+        handleLogout={props.handleLogout}
+        username={props.username}
       />
     </>
   );

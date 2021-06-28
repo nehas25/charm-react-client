@@ -285,6 +285,14 @@ form {
   font-size: 1rem;
 }
 
+.modal-header {
+  margin-bottom: 4%;
+}
+
+form input {
+  font-family: 'Kaushan Script', cursive;
+}
+
 /* .row.no-gutters {
   width: 60%;
 }

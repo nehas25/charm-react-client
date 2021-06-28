@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-import UsersModel from "../models/UsersModel";
-import ProductsModel from "../models/ProductsModel";
+import { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Trash } from "react-bootstrap-icons";
 

@@ -1,6 +1,5 @@
 import React from "react";
-import Image from "react-bootstrap/Image";
-import { Jumbotron, Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Row, Card, Button } from "react-bootstrap";
 import MainDressImg from "../../images/Red-rose-dress.jpeg";
 import MainJewelryImg from "../../images/ring.jpeg";
 
