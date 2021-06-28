@@ -68,15 +68,16 @@ function BagShowPage(props) {
 
         // <Col key={item._id} className="bag-item-card-container">
         <Card className="bag-item mb-3">
-          <Row className="no-gutters">
-            <Col className="col-md-4">
+          <Row className="no-gutters" xs={1} >
+            <Col className="col-sm-12 col-md-5 bag-card-img-container">
               <Card.Img
                 className="bag-item-img"
                 src={item.productDetails.imgUrls[0]}
                 fluid="true"
+                style={{ maxHeight: 325 }}
               />
             </Col>
-            <Col className="col-md-8">
+            <Col className="col-md-7">
               <Card.Body className="bag-item-body">
                 <Card.Title>{item.productDetails.name}</Card.Title>
                 <Card.Text>{item.productDetails.description}</Card.Text>
@@ -109,7 +110,7 @@ function BagShowPage(props) {
       //     </Row>
       // </Container>
 
-      <Container fluid="sm">{cardsArr}</Container>
+      <Container fluid="sm" className="bag-items-container">{cardsArr}</Container>
     );
   }
 }
