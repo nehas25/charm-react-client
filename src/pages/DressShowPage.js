@@ -72,7 +72,7 @@ function DressShowPage(props) {
         <Carousel.Item key={dress.url}>
           <img
             // className="d-block"
-            src={url}
+            src={process.env.PUBLIC_URL + `/${url}`}
             alt="Dress slide"
             style={{ maxHeight: 800 }}
           />
