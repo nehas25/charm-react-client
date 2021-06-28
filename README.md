@@ -87,4 +87,6 @@ It should also
 - Stripe payment processing
 - Sizes
 
-I hit my minimum viable product and also have sizes from stretch goals.
+### Conclusion
+
+I achieved the standards I had set for minimum viable product and also have Sizes feature from stretch goals.
