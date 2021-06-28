@@ -76,6 +76,11 @@ Add to Cart button
 - Select quantity
 - Carousel on product detail page
 
+It should also
+
+- Look good
+- Have a responsive UI (can be viewed on mobile phone or devices with different screen sizes)
+
 ### My stretch goals
 
 - Filters
