@@ -1,4 +1,4 @@
-const url = 'http://localhost:4000/api/v1/products';
+const url = 'http://peaceful-temple-57415.herokuapp.com/api/v1/products';
 
 class ProductsModel {
     // static all() {
