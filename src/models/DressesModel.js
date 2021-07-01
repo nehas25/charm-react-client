@@ -1,4 +1,4 @@
-const url = 'http://peaceful-temple-57415.herokuapp.com/api/v1/dresses';
+const url = 'https://peaceful-temple-57415.herokuapp.com/api/v1/dresses';
 
 class DressesModel {
     static all() {
