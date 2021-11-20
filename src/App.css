@@ -296,6 +296,10 @@ form input {
   font-family: 'Kaushan Script', cursive;
 }
 
+.loading-message {
+  font-size: 3em;
+}
+
 
 /*
 .bag-item-body.card-body {

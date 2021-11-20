@@ -19,7 +19,7 @@ function DressIndexPage() {
     if(allDresses) {
         return <CardsContainer dressesArr={allDresses}/>
     } else {
-        return <div>Loading...</div>
+        return <p className="loading-message">Loading...</p>
     }
 
 }
